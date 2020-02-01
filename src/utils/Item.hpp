@@ -21,6 +21,7 @@ public:
 	std::string getName() const {return _name;}
 	std::string const & getTexturePath() const {return _texturePath;}
 	sf::Font const & getFont() const {return _font;}
+	void setPosition(sf::Vector2f const & pos){_sprite.setPosition(pos);}
 };
 
 #endif

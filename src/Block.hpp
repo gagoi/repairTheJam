@@ -16,7 +16,7 @@ private:
 	sf::RectangleShape _bg_sprite, _fg_sprite;
 	sf::Texture _bg, _fg;
 	Type _type;
-	BrokenItem * _item;
+	Item * _item;
 public:
 	Block(int, int);
 	Block(int, int, Type);
@@ -27,6 +27,7 @@ public:
 	Type getType() const {return _type;}
 	Item * getItem() const {return _item;};
 	void removeItem() {_item = nullptr;}
+	void setItem(Item * item) {_item = item; _item->setPosition(_bg_sprite.getPosition());}
 };
 
 #endif
