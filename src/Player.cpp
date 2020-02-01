@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
-Player::Player() : _sprite(sf::Vector2f(50, 90))
+Player::Player() : _sprite(sf::Vector2f(50, 100))
 {
     _texture.loadFromFile("./res/textures/character.png");
     _sprite.setTextureRect(sf::IntRect(48 + 12, 19, 25, 45));
@@ -59,32 +59,32 @@ bool Player::checkCollide(Side s, std::vector<Block*> const & blocks, int speed)
         p2 = p1;
         p1.x -= 25;
         p2.x += 25;
-        p1.y -= 25 + speed;
-        p2.y -= 25 + speed;
+        p1.y -= speed;
+        p2.y -= speed;
         break;
     case LEFT:
         p1 = _sprite.getPosition();
         p2 = p1;
         p1.x -= 25 + speed;
         p2.x -= 25 + speed;
-        p1.y -= 25;
-        p2.y += 25;
+        p1.y -= 0;
+        p2.y += 50;
         break;
     case DOWN:
         p1 = _sprite.getPosition();
         p2 = p1;
         p1.x -= 25;
         p2.x += 25;
-        p1.y += 25 + speed;
-        p2.y += 25 + speed;
+        p1.y += 50 + speed;
+        p2.y += 50 + speed;
         break;
     case RIGHT:
         p1 = _sprite.getPosition();
         p2 = p1;
         p1.x += 25 + speed;
         p2.x += 25 + speed;
-        p1.y -= 25;
-        p2.y += 25;
+        p1.y -= 0;
+        p2.y += 50;
         break;
     }
 
