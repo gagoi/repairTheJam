@@ -1,0 +1,6 @@
+#ifndef SUPER_ENUM_OUAIS
+#define SUPER_ENUM_OUAIS
+
+enum Type{NORMAL, SCREWDRIVER, DECOMPOSER, INPUT};
+
+#endif

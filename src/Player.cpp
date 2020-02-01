@@ -22,7 +22,6 @@ void Player::draw(sf::RenderTarget & target, sf::RenderStates) const
     target.draw(_sprite);
 }
 
-                #include <iostream>
 void Player::update(std::vector<Block*> const & blocks)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -75,7 +74,6 @@ void Player::update(std::vector<Block*> const & blocks)
             {
                 b->setItem(_item);
                 _item = nullptr;
-                std::cout << "Drop" << std::endl;
             }
         }
     }
@@ -132,7 +130,7 @@ Block* Player::checkDrop(Side s, std::vector<Block*> const & blocks, int speed) 
         break;
     }
     for (auto &&b : blocks)
-        if (b->getType() != Block::INPUT && b->getItem() == nullptr && (b->contains(p1) || b->contains(p2)))
+        if (b->getType() != INPUT && b->getItem() == nullptr && (b->contains(p1) || b->contains(p2)))
             return b;
     
     return nullptr;

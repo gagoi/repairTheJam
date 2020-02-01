@@ -7,7 +7,7 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     _blocks.push_back(new Block(2, 0));
     _blocks.push_back(new Block(3, 0));
     _blocks.push_back(new Block(4, 0));
-    _blocks.push_back(new Block(5, 0, Block::SCREWDRIVER));
+    _blocks.push_back(new Block(5, 0, SCREWDRIVER));
     _blocks.push_back(new Block(6, 0));
     _blocks.push_back(new Block(7, 0));
     _blocks.push_back(new Block(8, 0));
@@ -18,7 +18,7 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     _blocks.push_back(new Block(0, 3));
     _blocks.push_back(new Block(0, 4));
     _blocks.push_back(new Block(0, 5));
-    _blocks.push_back(new Block(0, 6, Block::INPUT));
+    _blocks.push_back(new Block(0, 6, INPUT));
     _blocks.push_back(new Block(0, 7));
     _blocks.push_back(new Block(0, 8));
     _blocks.push_back(new Block(0, 9));
@@ -38,7 +38,7 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     
     _blocks.push_back(new Block(10, 0));
     _blocks.push_back(new Block(10, 1));
-    _blocks.push_back(new Block(10, 2, Block::INPUT));
+    _blocks.push_back(new Block(10, 2, INPUT));
     _blocks.push_back(new Block(10, 3));
     _blocks.push_back(new Block(10, 4));
     _blocks.push_back(new Block(10, 5));

@@ -5,11 +5,12 @@
 #include <random>
 #include "utils/BrokenItem.hpp"
 #include "gui/Orders.hpp"
+#include "ProgressBar.hpp"
+#include "RecipesList.hpp"
 
+#include "EnumMachine.hpp"
 class Block : public sf::Drawable
 {
-public:
-	enum Type{NORMAL, SCREWDRIVER, INPUT};
 private:
 	static std::mt19937 gen;
 	static std::uniform_real_distribution<> rand;
@@ -17,6 +18,8 @@ private:
 	sf::Texture _bg, _fg;
 	Type _type;
 	Item * _item;
+	float _processTime;
+	ProgressBar _bar;
 public:
 	Block(int, int);
 	Block(int, int, Type);
