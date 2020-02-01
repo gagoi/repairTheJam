@@ -7,6 +7,7 @@ Player::Player() : _sprite(sf::Vector2f(50, 100))
     _sprite.setTexture(&_texture);
     _sprite.setOrigin(25, 50);
     _sprite.setPosition(400 + 50 * 2, 50 * 5);
+    _cpt = 0;
 }
 
 Player::~Player()
@@ -26,27 +27,36 @@ void Player::update(std::vector<Block*> const & blocks)
         int speed = 5;
         while (checkCollide(UP, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(0, -speed);
+        changeTexture(UP);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
         int speed = 5;
         while (checkCollide(LEFT, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(-speed, 0);
+        changeTexture(LEFT);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
     {
         int speed = 5;
         while (checkCollide(DOWN, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(0, speed);
+        changeTexture(DOWN);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
         int speed = 5;
         while (checkCollide(RIGHT, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(speed, 0);
+        changeTexture(RIGHT);
     }
 }
 
+void Player::changeTexture(Side s)
+{
+    _sprite.setTextureRect(sf::IntRect(48 * (_cpt++ / 20) + 12 , 19 * (s + 1) + 45 * s , 25, 45));
+    if (_cpt >= 20*4) _cpt = 0;
+}
 
 bool Player::checkCollide(Side s, std::vector<Block*> const & blocks, int speed) const
 {

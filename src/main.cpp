@@ -25,6 +25,11 @@ int main()
             {
                 orders.mouseHandler(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
             }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+            {
+                Orders::free();
+                return 0;
+            }
         }
 
         game.update();

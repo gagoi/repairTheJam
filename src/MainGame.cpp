@@ -38,7 +38,7 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     
     _blocks.push_back(new Block(10, 0));
     _blocks.push_back(new Block(10, 1));
-    _blocks.push_back(new Block(10, 2));
+    _blocks.push_back(new Block(10, 2, Block::INPUT));
     _blocks.push_back(new Block(10, 3));
     _blocks.push_back(new Block(10, 4));
     _blocks.push_back(new Block(10, 5));

@@ -32,6 +32,7 @@ Block::Block(int x, int y, Type t) : Block(x, y)
 
 Block::~Block()
 {
+    delete _item;
 }
 
 void Block::draw(sf::RenderTarget & target, sf::RenderStates) const
@@ -45,7 +46,6 @@ bool Block::contains(sf::Vector2f const & pos) const
     return _bg_sprite.getGlobalBounds().contains(pos);
 }
 
-#include <iostream>
 void Block::update()
 {
     float r;
@@ -57,11 +57,10 @@ void Block::update()
             {
                 _item = new BrokenItem("Un item de test", "item2.png");
                 _fg_sprite = sf::RectangleShape(sf::Vector2f(50, 50));
-                if(_fg.loadFromFile(_item->getTexturePath())) std::cout << "Loaded : " + _item->getTexturePath() << std::endl;
+                _fg.loadFromFile(_item->getTexturePath());
                 _fg_sprite.setTexture(&_fg);
                 _fg_sprite.setPosition(_bg_sprite.getPosition());
                 Orders::insertOrder(_item);
-                std::cout << "Insert Item" << std::endl;
             }
         break;
         default:
