@@ -1,0 +1,71 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/jungle_door_bottom",
+		"texture": "block/jungle_door_bottom"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 3, 0 ],
+			"to": [ 3, 15, 7 ],
+			"faces": {
+				"north": { "uv": [ 16, 5.5, 12, 6 ], "texture": "#texture", "cullface": "north" },
+				"south": { "uv": [ 12, 5.5, 16, 6 ], "texture": "#texture" },
+				"west": { "uv": [ 16, 1, 9, 13 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 9, 1, 16, 13 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box2",
+			"from": [ 0, 3, 9 ],
+			"to": [ 3, 15, 16 ],
+			"faces": {
+				"north": { "uv": [ 16, 5.5, 12, 6 ], "texture": "#texture" },
+				"south": { "uv": [ 0.5, 1, 0, 13 ], "texture": "#texture", "cullface": "south" },
+				"west": { "uv": [ 7, 1, 0, 13 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 0, 1, 7, 13 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box15",
+			"from": [ 0, 0, 0 ],
+			"to": [ 3, 3, 16 ],
+			"faces": {
+				"down": { "uv": [ 12, 5, 16, 5.5 ], "texture": "#texture", "cullface": "down" },
+				"north": { "uv": [ 16, 5.5, 12, 6 ], "texture": "#texture", "cullface": "north" },
+				"south": { "uv": [ 0.5, 13, 0, 16 ], "texture": "#texture", "cullface": "south" },
+				"west": { "uv": [ 16, 13, 0, 16 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 0, 13, 16, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box16",
+			"from": [ 0, 15, 0 ],
+			"to": [ 3, 16, 16 ],
+			"faces": {
+				"north": { "uv": [ 16, 5.5, 12, 6 ], "texture": "#texture", "cullface": "north" },
+				"south": { "uv": [ 0.5, 0, 0, 1 ], "texture": "#texture", "cullface": "south" },
+				"west": { "uv": [ 16, 0, 0, 1 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 0, 0, 16, 1 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box17",
+			"from": [ 0, 15, 7 ],
+			"to": [ 3, 16, 9 ],
+			"faces": {
+				"down": { "uv": [ 12, 5, 16, 5.5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box18",
+			"from": [ 0, 0, 7 ],
+			"to": [ 3, 3, 9 ],
+			"faces": {
+				"up": { "uv": [ 12, 5, 16, 5.5 ], "texture": "#texture" }
+			}
+		}
+	]
+}

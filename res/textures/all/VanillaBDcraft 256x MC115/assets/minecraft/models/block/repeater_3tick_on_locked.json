@@ -1,0 +1,59 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "block/repeater_on",
+		"side": "block/_bdc/repeater_side",
+		"redstone_torch": "block/redstone_torch",
+		"smooth_stone": "block/smooth_stone"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Element",
+			"from": [ 7, 2, 2 ],
+			"to": [ 9, 6, 4 ],
+			"faces": {
+				"north": { "uv": [ 7, 8.5, 9, 12.5 ], "texture": "#redstone_torch" },
+				"south": { "uv": [ 7, 8.5, 9, 12.5 ], "texture": "#redstone_torch" },
+				"west": { "uv": [ 7, 8.5, 9, 12.5 ], "texture": "#redstone_torch" },
+				"east": { "uv": [ 7, 8.5, 9, 12.5 ], "texture": "#redstone_torch" }
+			}
+		},
+		{
+			"__comment": "Element",
+			"from": [ 7, 6, 2 ],
+			"to": [ 9, 8, 4 ],
+			"faces": {
+				"up": { "uv": [ 0, 12, 2, 14 ], "texture": "#redstone_torch" },
+				"north": { "uv": [ 0, 12, 2, 14 ], "texture": "#redstone_torch" },
+				"south": { "uv": [ 0, 12, 2, 14 ], "texture": "#redstone_torch" },
+				"west": { "uv": [ 0, 12, 2, 14 ], "texture": "#redstone_torch" },
+				"east": { "uv": [ 0, 12, 2, 14 ], "texture": "#redstone_torch" }
+			}
+		},
+		{
+			"__comment": "Box12",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 2, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#smooth_stone", "cullface": "down" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#particle" },
+				"north": { "uv": [ 0, 0, 16, 2 ], "texture": "#side", "cullface": "north" },
+				"south": { "uv": [ 0, 0, 16, 2 ], "texture": "#side", "cullface": "south" },
+				"west": { "uv": [ 0, 2, 16, 4 ], "texture": "#side", "cullface": "west" },
+				"east": { "uv": [ 0, 2, 16, 4 ], "texture": "#side", "cullface": "east" }
+			}
+		},
+		{
+			"__comment": "Box6",
+			"from": [ 2, 2, 10 ],
+			"to": [ 14, 4, 12 ],
+			"faces": {
+				"up": { "uv": [ 2, 12, 14, 14 ], "texture": "#side" },
+				"north": { "uv": [ 2, 12, 14, 14 ], "texture": "#side" },
+				"south": { "uv": [ 2, 12, 14, 14 ], "texture": "#side" },
+				"west": { "uv": [ 14, 12, 16, 14 ], "texture": "#side" },
+				"east": { "uv": [ 14, 12, 16, 14 ], "texture": "#side" }
+			}
+		}
+	]
+}

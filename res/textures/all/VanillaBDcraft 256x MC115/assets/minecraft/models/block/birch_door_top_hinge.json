@@ -1,0 +1,22 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/birch_door_top",
+		"texture": "block/birch_door_top"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Element",
+			"from": [ 0, 0, 0 ],
+			"to": [ 3, 16, 16 ],
+			"faces": {
+				"up": { "uv": [ 4, 1, 8, 2 ], "texture": "#texture", "cullface": "up" },
+				"north": { "uv": [ 4, 1, 8, 2 ], "texture": "#texture", "cullface": "north", "rotation": 180 },
+				"south": { "uv": [ 0.5, 0, 0, 16 ], "texture": "#texture", "cullface": "south" },
+				"west": { "uv": [ 16, 0, 0, 16 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" }
+			}
+		}
+	]
+}

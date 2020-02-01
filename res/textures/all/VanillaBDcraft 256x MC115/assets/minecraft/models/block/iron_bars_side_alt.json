@@ -1,0 +1,80 @@
+{
+	"__comment": "Model by Mickey Joe & Sphax for VanillaBDcraft - BDcraft.net.",
+	"textures": {
+		"particle": "block/iron_bars",
+		"iron_bars": "block/iron_bars"
+	},
+	"elements": [ 	 
+		{
+			"from": [ 7, 8, 7 ],
+			"to": [ 9, 16, 9 ],
+			"faces": {
+				"north": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"south": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"west": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"from": [ 7, 9, 12 ],
+			"to": [ 9, 16, 14 ],
+			"faces": {
+				"north": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"south": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"west": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"from": [ 7.25, 2.25, 9 ],
+			"to": [ 8.75, 3.75, 12 ],
+			"faces": {
+				"down": { "uv": [ 7, 2, 4, 4 ], "texture": "#iron_bars", "rotation": 270 },
+				"up": { "uv": [ 7, 4, 4, 2 ], "texture": "#iron_bars", "rotation": 90 },
+				"west": { "uv": [ 4, 2, 7, 4 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 7, 2, 4, 4 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"from": [ 7.25, 7.25, 14 ],
+			"to": [ 8.75, 8.75, 16 ],
+			"faces": {
+				"down": { "uv": [ 16, 9, 14, 7 ], "texture": "#iron_bars", "rotation": 90 },
+				"up": { "uv": [ 14, 9, 16, 7 ], "texture": "#iron_bars", "rotation": 90 },
+				"west": { "uv": [ 14, 7, 16, 9 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 16, 7, 14, 9 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"from": [ 7, 0, 12 ],
+			"to": [ 9, 7, 14 ],
+			"faces": {
+				"north": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"south": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"west": { "uv": [ 12, 9, 14, 16 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 12, 9, 14, 16 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"from": [ 7, 0, 7 ],
+			"to": [ 9, 8, 9 ],
+			"faces": {
+				"north": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"south": { "uv": [ 7, 4, 9, 12 ], "texture": "#iron_bars" },
+				"west": { "uv": [ 7, 8, 9, 16 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 7, 8, 9, 16 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"__comment": "Box7",
+			"from": [ 7, 7, 12 ],
+			"to": [ 9, 9, 14 ],
+			"faces": {
+				"north": { "uv": [ 7, 7, 9, 9 ], "texture": "#iron_bars" },
+				"south": { "uv": [ 7, 7, 9, 9 ], "texture": "#iron_bars" },
+				"west": { "uv": [ 2, 2, 4, 4 ], "texture": "#iron_bars" },
+				"east": { "uv": [ 2, 2, 4, 4 ], "texture": "#iron_bars" }
+			}
+		}
+	]
+}

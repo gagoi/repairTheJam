@@ -1,0 +1,65 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"parent": "block/block",
+	"textures": {
+		"texture": "item/bell",
+		"plank": "block/dark_oak_planks"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Element",
+			"from": [ 5, 5, 5 ],
+			"to": [ 11, 11.5, 11 ],
+			"faces": {
+				"up": { "uv": [ 9, 9, 15, 15 ], "texture": "#texture" },
+				"north": { "uv": [ 1, 0, 7, 7 ], "texture": "#texture" },
+				"south": { "uv": [ 1, 0, 7, 7 ], "texture": "#texture" },
+				"west": { "uv": [ 1, 0, 7, 7 ], "texture": "#texture" },
+				"east": { "uv": [ 1, 0, 7, 7 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Element",
+			"from": [ 4, 3, 4 ],
+			"to": [ 12, 5, 12 ],
+			"faces": {
+				"down": { "uv": [ 8, 0, 16, 8 ], "texture": "#texture" },
+				"up": { "uv": [ 8, 8, 16, 16 ], "texture": "#texture" },
+				"north": { "uv": [ 0, 7, 8, 9 ], "texture": "#texture" },
+				"south": { "uv": [ 0, 7, 8, 9 ], "texture": "#texture" },
+				"west": { "uv": [ 0, 7, 8, 9 ], "texture": "#texture" },
+				"east": { "uv": [ 0, 7, 8, 9 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Element",
+			"from": [ 3, 11.5, 7 ],
+			"to": [ 13, 13.5, 9 ],
+			"faces": {
+				"down": { "uv": [ 0, 8, 16, 12 ], "texture": "#plank" },
+				"up": { "uv": [ 0, 8, 16, 12 ], "texture": "#plank" },
+				"north": { "uv": [ 0, 8, 16, 12 ], "texture": "#plank" },
+				"south": { "uv": [ 0, 8, 16, 12 ], "texture": "#plank" },
+				"west": { "uv": [ 5.5, 0, 10, 4 ], "texture": "#plank" },
+				"east": { "uv": [ 5.5, 0, 10, 4 ], "texture": "#plank" }
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation":  [ 0, -90, -135 ],
+			"translation":  [ 0, 2, 0.5 ],
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation":  [ 0, -90, -135 ],
+			"translation":  [ 0, 2, 0.5 ],
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		},
+		"gui": {
+			"rotation":  [ 30, 225, 0 ],
+			"translation":  [ 0, 1, 0 ],
+			"scale":  [ 0.85, 0.85, 0.85 ]
+		}
+	}
+}

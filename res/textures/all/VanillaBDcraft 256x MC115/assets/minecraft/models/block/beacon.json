@@ -1,0 +1,64 @@
+{
+	"__comment": "Model by Mickey Joe & Sphax for VanillaBDcraft - BDcraft.net.",
+	"parent": "block/block",
+	"textures": {
+		"particle": "block/glass",
+		"glass": "block/glass",
+		"obsidian": "block/obsidian",
+		"beacon": "block/beacon"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Obsidian base",
+			"from": [ 1, 0.01, 1 ],
+			"to": [ 15, 1.5, 15 ],
+			"faces": {
+				"down": { "uv": [ 1, 1, 15, 15 ], "texture": "#obsidian" },
+				"up": { "uv": [ 1, 1, 15, 15 ], "texture": "#obsidian" },
+				"north": { "uv": [ 1, 14.5, 15, 16 ], "texture": "#obsidian" },
+				"south": { "uv": [ 1, 14.5, 15, 16 ], "texture": "#obsidian" },
+				"west": { "uv": [ 1, 14.5, 15, 16 ], "texture": "#obsidian" },
+				"east": { "uv": [ 1, 14.5, 15, 16 ], "texture": "#obsidian" }
+			}
+		},
+		{
+			"__comment": "Inner beacon texture",
+			"from": [ 3, 3, 3 ],
+			"to": [ 13, 13, 13 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": -45 },
+			"faces": {
+				"down": { "uv": [ 3, 3.5, 13, 13 ], "texture": "#beacon" },
+				"up": { "uv": [ 3, 3.5, 13, 13 ], "texture": "#beacon" },
+				"north": { "uv": [ 3, 3.5, 13, 13 ], "texture": "#beacon" },
+				"south": { "uv": [ 3, 3.5, 13, 13 ], "texture": "#beacon" },
+				"west": { "uv": [ 3, 3.5, 13, 13 ], "texture": "#beacon" },
+				"east": { "uv": [ 3, 3.5, 13, 13 ], "texture": "#beacon" }
+			}
+		},
+		{
+			"__comment": "Plinth",
+			"from": [ 2, 1.5, 2 ],
+			"to": [ 14, 3, 14 ],
+			"faces": {
+				"up": { "uv": [ 2, 2, 14, 14 ], "texture": "#obsidian" },
+				"north": { "uv": [ 2, 13, 14, 14.5 ], "texture": "#obsidian" },
+				"south": { "uv": [ 2, 13, 14, 14.5 ], "texture": "#obsidian" },
+				"west": { "uv": [ 2, 13, 14, 14.5 ], "texture": "#obsidian" },
+				"east": { "uv": [ 2, 13, 14, 14.5 ], "texture": "#obsidian" }
+			}
+		},
+		{
+			"__comment": "Glass shell",
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 0, 16, 16 ], "texture": "#glass" },
+				"up": { "uv": [ 0, 0, 16, 16 ], "texture": "#glass" },
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#glass" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#glass" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#glass" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#glass" }
+			}
+		}
+	]
+}

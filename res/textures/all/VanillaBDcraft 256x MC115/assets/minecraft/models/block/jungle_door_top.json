@@ -1,0 +1,84 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/jungle_door_top",
+		"texture": "block/jungle_door_top"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 3, 16, 16 ],
+			"faces": {
+				"up": { "uv": [ 8, 1, 12, 1.5 ], "texture": "#texture", "cullface": "up" },
+				"north": { "uv": [ 0, 0, 0.5, 16 ], "texture": "#texture", "cullface": "north" },
+				"south": { "uv": [ 8, 1, 12, 1.5 ], "texture": "#texture", "cullface": "south" },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 16, 0, 0, 16 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box8",
+			"from": [ 0, 13, 7 ],
+			"to": [ 3, 14, 9 ],
+			"faces": {
+				"down": { "uv": [ 8, 1, 12, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 7, 2, 9, 3 ], "texture": "#texture" },
+				"east": { "uv": [ 9, 2, 7, 3 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box9",
+			"from": [ 0, 5, 4 ],
+			"to": [ 3, 6, 12 ],
+			"faces": {
+				"up": { "uv": [ 8, 1, 12, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 4, 10, 12, 11 ], "texture": "#texture" },
+				"east": { "uv": [ 12, 10, 4, 11 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box10",
+			"from": [ 0, 6, 3 ],
+			"to": [ 3, 10, 4 ],
+			"faces": {
+				"south": { "uv": [ 8, 1, 12, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 3, 6, 4, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 4, 6, 3, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box11",
+			"from": [ 0, 6, 12 ],
+			"to": [ 3, 10, 13 ],
+			"faces": {
+				"north": { "uv": [ 12, 1, 8, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 12, 6, 13, 10 ], "texture": "#texture" },
+				"east": { "uv": [ 13, 6, 12, 10 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box12",
+			"from": [ 0.01, 10, 3 ],
+			"to": [ 2.99, 14.25, 4 ],
+			"rotation": { "origin": [ 0, 10, 4 ], "axis": "x", "angle": 45 },
+			"faces": {
+				"south": { "uv": [ 8, 1, 12, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 15.5, 0, 16, 0.5 ], "texture": "#texture" },
+				"east": { "uv": [ 15.5, 0, 16, 0.5 ], "texture": "#texture" }
+			}
+		},
+		{
+			"__comment": "Box13",
+			"from": [ 0.01, 10, 12 ],
+			"to": [ 2.99, 14.25, 13 ],
+			"rotation": { "origin": [ 0, 10, 12 ], "axis": "x", "angle": -45 },
+			"faces": {
+				"north": { "uv": [ 12, 1, 8, 1.5 ], "texture": "#texture" },
+				"west": { "uv": [ 15.5, 0, 16, 0.5 ], "texture": "#texture" },
+				"east": { "uv": [ 15.5, 0, 16, 0.5 ], "texture": "#texture" }
+			}
+		}
+	]
+}

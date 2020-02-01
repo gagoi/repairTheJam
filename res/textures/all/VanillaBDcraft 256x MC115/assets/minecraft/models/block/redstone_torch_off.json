@@ -1,0 +1,7 @@
+{
+	"__comment": "Model by Mickey Joe & Sphax for VanillaBDcraft - BDcraft.net.",
+	"parent": "block/redstone_torch",
+	"textures": {
+    	"particle": "block/redstone_torch_off"
+	}
+}

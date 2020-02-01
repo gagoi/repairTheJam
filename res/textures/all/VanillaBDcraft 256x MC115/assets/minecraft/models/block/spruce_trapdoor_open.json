@@ -1,0 +1,24 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"parent": "block/thin_block",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/spruce_trapdoor",
+		"texture": "block/spruce_trapdoor"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 13 ],
+			"to": [ 16, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 16, 1.5, 0, 1 ], "texture": "#texture", "cullface": "down" },
+				"up": { "uv": [ 16, 1, 0, 1.5 ], "texture": "#texture", "cullface": "up" },
+				"north": { "uv": [ 16, 16, 0, 0 ], "texture": "#texture" },
+				"south": { "uv": [ 16, 0, 0, 16 ], "texture": "#texture", "cullface": "south", "rotation": 180 },
+				"west": { "uv": [ 4, 1, 7, 1.5 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 4, 1, 7, 1.5 ], "texture": "#texture", "cullface": "east", "rotation": 180 }
+			}
+		}
+	]
+}

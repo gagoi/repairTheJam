@@ -2,7 +2,8 @@
 
 Block::Block(int x, int y) : _sprite(sf::Vector2f(50, 50))
 {
-    _sprite.setFillColor(sf::Color::Cyan);
+    _bg.loadFromFile("./res/textures/world/workbench.png");
+    _sprite.setTexture(&_bg);
     _sprite.setPosition(400 + x * 50, y * 50);
 }
 

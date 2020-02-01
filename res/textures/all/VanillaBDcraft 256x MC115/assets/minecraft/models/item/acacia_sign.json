@@ -1,0 +1,8 @@
+{
+"__comment": "Model by HanFox & Sphax - BDcraft.net.",
+	"parent": "item/_bdc/sign",
+	"textures": {
+		"particle": "item/acacia_sign",
+		"texture": "item/acacia_sign"
+	}
+}

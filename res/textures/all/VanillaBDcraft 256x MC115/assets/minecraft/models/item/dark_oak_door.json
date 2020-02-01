@@ -1,0 +1,36 @@
+{
+	"__comment": "Designed by HanFox with Cubik Studio - https://cubik.studio",
+	"parent": "item/_bdc/door",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "block/dark_oak_door_bottom",
+		"texture": "block/dark_oak_door_bottom",
+		"top": "block/dark_oak_door_top"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box1",
+			"from": [ 0, 16, 0 ],
+			"to": [ 3, 32, 16 ],
+			"faces": {
+				"up": { "uv": [ 9, 0, 9.5, 2 ], "texture": "#top", "cullface": "up", "rotation": 90 },
+				"north": { "uv": [ 0, 0, 0.5, 16 ], "texture": "#top", "cullface": "north" },
+				"south": { "uv": [ 9, 0, 9.5, 2 ], "texture": "#top", "cullface": "south", "rotation": 90 },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#top", "cullface": "west" },
+				"east": { "uv": [ 16, 0, 0, 16 ], "texture": "#top" }
+			}
+		},
+		{
+			"__comment": "Box1",
+			"from": [ 0, 0, 0 ],
+			"to": [ 3, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 9, 0, 9.5, 2 ], "texture": "#top", "cullface": "down", "rotation": 90 },
+				"north": { "uv": [ 0, 0, 0.5, 16 ], "texture": "#texture", "cullface": "north" },
+				"south": { "uv": [ 9, 0, 9.5, 2 ], "texture": "#top", "cullface": "south", "rotation": 90 },
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture", "cullface": "west" },
+				"east": { "uv": [ 16, 0, 0, 16 ], "texture": "#texture" }
+			}
+		}
+	]
+}

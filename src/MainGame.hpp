@@ -11,6 +11,8 @@ class MainGame : public sf::Drawable
 private:
 	Player _p;
 	std::vector<Block*> _blocks;
+	sf::RectangleShape _bg;
+	sf::Texture _bg_texture;
 public:
 	MainGame();
 	~MainGame();

@@ -1,0 +1,106 @@
+{
+"__comment": "Model by Mickey Joe & Sphax for VanillaBDcraft - BDcraft.net.",
+"ambientocclusion": false,
+"textures": {
+    "particle": "block/redstone_torch"
+},
+"elements": [ 
+{
+    "from": [ 7, 0, 7 ],
+    "to": [ 9, 9, 9 ],
+    "faces": {
+        "down":  { "uv": [ 2, 16, 0, 14 ], "texture": "#particle" },
+        "north": { "uv": [ 7, 7, 9, 16 ], "texture": "#particle" },
+        "south": { "uv": [ 7, 7, 9, 16 ], "texture": "#particle" },
+        "west":  { "uv": [ 7, 7, 9, 16 ], "texture": "#particle" },
+        "east":  { "uv": [ 7, 7, 9, 16 ], "texture": "#particle" }
+    }
+},
+{
+    "from": [ 6.9375, 7, 6 ],
+    "to": [ 7, 12, 10 ],
+    "shade": false,
+    "faces": {
+        "west":  { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" },
+        "east":  { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" }
+    }
+},
+{
+    "from": [ 9.0625, 7, 6 ],
+    "to": [ 9.125, 12, 10 ],
+    "shade": false,
+    "faces": {
+        "west":  { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" },
+        "east":  { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" }
+    }
+},
+{
+    "from": [ 6, 7, 6.9375 ],
+    "to": [ 10, 12, 7 ],
+    "shade": false,
+    "faces": {
+        "north": { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" },
+        "south": { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" }
+    }
+},
+{
+    "from": [ 6, 7, 9.0625 ],
+    "to": [ 10, 12, 9.125 ],
+    "shade": false,
+    "faces": {
+        "north": { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" },
+        "south": { "uv": [ 6, 0, 10, 5 ], "texture": "#particle" }
+    }
+},
+{
+    "from": [ 7, 11.1875, 7 ],
+    "to": [ 9, 11.25, 9 ],
+    "shade": false,
+    "faces": {
+        "up":    { "uv": [ 0, 12, 2, 14 ], "texture": "#particle" }
+    }
+}
+],
+"display": {
+    "thirdperson_righthand": {
+        "rotation": [ 0, 0, 0 ],
+        "translation": [ 0, 6.8, 2.27 ],
+        "scale": [ 1, 1, 1 ]
+    },
+    "thirdperson_lefthand": {
+        "rotation": [ 0, 0, 0 ],
+        "translation": [ 0, 6.8, 2.27 ],
+        "scale": [ 1, 1, 1 ]
+    },
+    "head": {
+        "rotation": [ 0, 0, 0 ],
+        "translation": [ 0, 13, 0 ],
+        "scale": [ 1, 1, 1 ]
+    },
+    "ground": {
+        "rotation": [ 0, 0, 0 ],
+        "translation": [ 0, 3, 0 ],
+        "scale": [ 0.25, 0.25, 0.25 ]
+    },
+    "fixed": {
+        "rotation": [ 0, 0, 0 ],
+        "translation": [ 0, 1.89, -0.75 ],
+        "scale": [ 1, 1, 1 ]
+    },
+    "firstperson_righthand": {
+        "rotation": [ -28, 0, -6 ],
+        "translation": [ 0, 5.67, 0 ],
+        "scale": [ 0.9, 0.9, 0.9 ]
+    },
+    "firstperson_lefthand": {
+        "rotation": [ -28, 0, -6 ],
+        "translation": [ 0, 5.67, 0 ],
+        "scale": [ 1, 1, 1 ]
+    },
+    "gui": {
+        "rotation": [ 9, 14, 0 ],
+        "translation": [ 0, 2.6, 0 ],
+        "scale": [ 1.12, 1.12, 1.12 ]
+    }
+}
+}

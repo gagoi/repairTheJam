@@ -1,0 +1,25 @@
+{
+	"__comment": "Model by Mickey Joe & Sphax for VanillaBDcraft - BDcraft.net.",
+	"textures": {
+		"particle": "block/iron_bars",
+		"iron_bars": "block/iron_bars"
+	},
+	"elements": [ 	 
+		{
+			"from": [ 7, 0, 2 ],
+			"to": [ 9, 16, 4 ],
+			"faces": {
+				"down": { "uv": [ 0, 14, 2, 16 ], "texture": "#iron_bars" },
+				"up": { "uv": [ 0, 14, 2, 16 ], "texture": "#iron_bars" }
+			}
+		},
+		{
+			"from": [ 7, 0, 7 ],
+			"to": [ 9, 16, 9 ],
+			"faces": {
+				"down": { "uv": [ 0, 14, 2, 16 ], "texture": "#iron_bars" },
+				"up": { "uv": [ 0, 14, 2, 16 ], "texture": "#iron_bars" }
+			}
+		}
+	]
+}
