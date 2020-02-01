@@ -24,6 +24,9 @@ public:
 	void draw(sf::RenderTarget &, sf::RenderStates) const;
 	bool contains(sf::Vector2f const &) const;
 	void update();
+	Type getType() const {return _type;}
+	Item * getItem() const {return _item;};
+	void removeItem() {_item = nullptr;}
 };
 
 #endif

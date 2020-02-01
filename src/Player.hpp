@@ -10,10 +10,13 @@ class Player : public sf::Drawable
 private:
 	enum Side {DOWN, LEFT, RIGHT, UP};
 	int _cpt;
+	Side _side;
 	sf::Texture _texture;
 	sf::RectangleShape _sprite;
 	bool checkCollide(Side, std::vector<Block*> const &, int) const;
+	Block* checkPeakUp(Side s, std::vector<Block*> const & blocks, int speed) const;
 	void changeTexture(Side s);
+	Item * _item;
 public:
 	Player();
 	~Player();

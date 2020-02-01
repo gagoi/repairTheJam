@@ -2,6 +2,7 @@
 
 Player::Player() : _sprite(sf::Vector2f(50, 100))
 {
+    _item = nullptr;
     _texture.loadFromFile("./res/textures/character.png");
     _sprite.setTextureRect(sf::IntRect(48 + 12, 19, 25, 45));
     _sprite.setTexture(&_texture);
@@ -28,6 +29,7 @@ void Player::update(std::vector<Block*> const & blocks)
         while (checkCollide(UP, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(0, -speed);
         changeTexture(UP);
+        _side = UP;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
@@ -35,6 +37,7 @@ void Player::update(std::vector<Block*> const & blocks)
         while (checkCollide(LEFT, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(-speed, 0);
         changeTexture(LEFT);
+        _side = LEFT;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
     {
@@ -42,6 +45,7 @@ void Player::update(std::vector<Block*> const & blocks)
         while (checkCollide(DOWN, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(0, speed);
         changeTexture(DOWN);
+        _side = DOWN;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
@@ -49,6 +53,16 @@ void Player::update(std::vector<Block*> const & blocks)
         while (checkCollide(RIGHT, blocks, speed) && speed != 0) speed /= 2;
             _sprite.move(speed, 0);
         changeTexture(RIGHT);
+        _side = RIGHT;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && _item == nullptr)
+    {
+        Block * b = checkPeakUp(_side, blocks, 30);
+        if (b != nullptr) 
+        {
+            _item = b->getItem();
+            b->removeItem();
+        }
     }
 }
 
@@ -56,6 +70,52 @@ void Player::changeTexture(Side s)
 {
     _sprite.setTextureRect(sf::IntRect(48 * (_cpt++ / 20) + 12 , 19 * (s + 1) + 45 * s , 25, 45));
     if (_cpt >= 20*4) _cpt = 0;
+}
+
+Block* Player::checkPeakUp(Side s, std::vector<Block*> const & blocks, int speed) const 
+{
+    sf::Vector2f p1;
+    sf::Vector2f p2;
+    switch (s)
+    {
+    case UP:
+        p1 = _sprite.getPosition();
+        p2 = p1;
+        p1.x -= 25;
+        p2.x += 25;
+        p1.y -= speed;
+        p2.y -= speed;
+        break;
+    case LEFT:
+        p1 = _sprite.getPosition();
+        p2 = p1;
+        p1.x -= 25 + speed;
+        p2.x -= 25 + speed;
+        p1.y -= 0;
+        p2.y += 25;
+        break;
+    case DOWN:
+        p1 = _sprite.getPosition();
+        p2 = p1;
+        p1.x -= 25;
+        p2.x += 25;
+        p1.y += 50 + speed;
+        p2.y += 50 + speed;
+        break;
+    case RIGHT:
+        p1 = _sprite.getPosition();
+        p2 = p1;
+        p1.x += 25 + speed;
+        p2.x += 25 + speed;
+        p1.y -= 0;
+        p2.y += 25;
+        break;
+    }
+    for (auto &&b : blocks)
+        if (b->getType() == Block::INPUT && b->getItem() != nullptr && (b->contains(p1) || b->contains(p2)))
+            return b;
+    
+    return nullptr;
 }
 
 bool Player::checkCollide(Side s, std::vector<Block*> const & blocks, int speed) const

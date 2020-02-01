@@ -38,7 +38,8 @@ Block::~Block()
 void Block::draw(sf::RenderTarget & target, sf::RenderStates) const
 {
     target.draw(_bg_sprite);
-    target.draw(_fg_sprite);
+    if (_item != nullptr)
+        target.draw(_fg_sprite);
 }
 
 bool Block::contains(sf::Vector2f const & pos) const
