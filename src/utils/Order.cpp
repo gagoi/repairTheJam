@@ -6,6 +6,11 @@ Order::Order()
 
 Order::~Order()
 {
+    for (auto &&i : _items)
+    {
+        delete i;
+    }
+    
 }
 
 

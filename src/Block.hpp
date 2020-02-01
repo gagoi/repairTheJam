@@ -2,21 +2,28 @@
 #define BLOCK_HPP_
 
 #include <SFML/Graphics.hpp>
+#include <random>
+#include "utils/BrokenItem.hpp"
+#include "gui/Orders.hpp"
 
 class Block : public sf::Drawable
 {
 public:
-	enum Type{ SCREWDRIVER};
+	enum Type{NORMAL, SCREWDRIVER, INPUT};
 private:
+	static std::mt19937 gen;
+	static std::uniform_real_distribution<> rand;
 	sf::RectangleShape _bg_sprite, _fg_sprite;
 	sf::Texture _bg, _fg;
 	Type _type;
+	BrokenItem * _item;
 public:
 	Block(int, int);
 	Block(int, int, Type);
 	~Block();
 	void draw(sf::RenderTarget &, sf::RenderStates) const;
 	bool contains(sf::Vector2f const &) const;
+	void update();
 };
 
 #endif

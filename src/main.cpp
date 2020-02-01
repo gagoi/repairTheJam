@@ -6,12 +6,12 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1900, 1000), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1900, 1000), "Repair my Jam!");
     //sf::CircleShape shape(100.f);
     //shape.setFillColor(sf::Color::Green);
     window.setFramerateLimit(60);
     Recipes recipes;
-    Orders orders;
+    Orders & orders = *Orders::getInstance();
     MainGame game;
 
     while (window.isOpen())

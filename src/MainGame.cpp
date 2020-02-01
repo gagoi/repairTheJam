@@ -18,7 +18,7 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     _blocks.push_back(new Block(0, 3));
     _blocks.push_back(new Block(0, 4));
     _blocks.push_back(new Block(0, 5));
-    _blocks.push_back(new Block(0, 6));
+    _blocks.push_back(new Block(0, 6, Block::INPUT));
     _blocks.push_back(new Block(0, 7));
     _blocks.push_back(new Block(0, 8));
     _blocks.push_back(new Block(0, 9));
@@ -56,6 +56,11 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
 
 MainGame::~MainGame()
 {
+    for (auto &&b : _blocks)
+    {
+        delete b;
+    }
+    
 }
 
 
@@ -73,4 +78,8 @@ void MainGame::draw(sf::RenderTarget & target, sf::RenderStates) const
 void MainGame::update()
 {
     _p.update(_blocks);
+    for (auto &&b : _blocks)
+    {
+        b->update();
+    }
 }
