@@ -1,10 +1,17 @@
 #include <SFML/Graphics.hpp>
 
+#include "gui/Orders.hpp"
+#include "gui/Recipes.hpp"
+
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
+
+    Recipes recipes;
+    Orders orders;
 
     while (window.isOpen())
     {
@@ -16,6 +23,8 @@ int main()
         }
 
         window.clear();
+        window.draw(orders);
+        window.draw(recipes);
         window.draw(shape);
         window.display();
     }
