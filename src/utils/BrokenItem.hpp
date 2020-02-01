@@ -9,7 +9,7 @@ class BrokenItem : public Item
 private:
 	Recipe _recipe;
 public:
-	BrokenItem();
+	BrokenItem(std::string const &, std::string const &);
 	~BrokenItem();
 	Recipe getRecipe() const {return _recipe;}
 };
