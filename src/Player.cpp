@@ -130,7 +130,7 @@ Block* Player::checkDrop(Side s, std::vector<Block*> const & blocks, int speed) 
         break;
     }
     for (auto &&b : blocks)
-        if (b->getType() != INPUT && b->getItem() == nullptr && (b->contains(p1) || b->contains(p2)))
+        if (b->getType() != DECOMPOSER_OUTPUT && b->getItem() == nullptr && (b->contains(p1) || b->contains(p2)))
             return b;
     
     return nullptr;

@@ -6,18 +6,24 @@
 #include "Block.hpp"
 #include <vector>
 
+class Block;
+class Player;
 class MainGame : public sf::Drawable
 {
 private:
-	Player _p;
+	static MainGame * instance;
+	Player * _p;
 	std::vector<Block*> _blocks;
 	sf::RectangleShape _bg;
 	sf::Texture _bg_texture;
-public:
 	MainGame();
+public:
 	~MainGame();
 	void draw(sf::RenderTarget &, sf::RenderStates) const;
 	void update();
+	std::vector<Block*> getDecomposerOut();
+	static MainGame * getInstance() {if (instance == nullptr) instance = new MainGame(); return instance;}
+	static void free() {delete instance;}
 };
 
 #endif

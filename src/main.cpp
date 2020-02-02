@@ -12,7 +12,7 @@ int main()
     window.setFramerateLimit(60);
     Recipes recipes;
     Orders & orders = *Orders::getInstance();
-    MainGame game;
+    MainGame & game = *MainGame::getInstance();
 
     while (window.isOpen())
     {

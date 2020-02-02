@@ -12,7 +12,7 @@ class RecipesList
 private:
 	static RecipesList * instance;
 	struct Recipe {
-		std::string const & input;
+		std::string input;
 		std::vector<std::string> outputs;
 		Type tool;
 
@@ -38,6 +38,7 @@ public:
 	static RecipesList * getInstance() {if (instance == nullptr) instance = new RecipesList(); return instance;}
 	void free() {delete instance;}
 	bool exist(std::string const &, Type);
+	std::vector<std::string> getRecipeOutput(std::string, Type) const;
 };
 
 #endif

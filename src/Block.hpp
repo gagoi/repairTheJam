@@ -7,7 +7,7 @@
 #include "gui/Orders.hpp"
 #include "ProgressBar.hpp"
 #include "RecipesList.hpp"
-
+#include "MainGame.hpp"
 #include "EnumMachine.hpp"
 class Block : public sf::Drawable
 {

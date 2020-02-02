@@ -5,6 +5,7 @@
 #include "Block.hpp"
 #include <algorithm>
 
+class Block;
 class Player : public sf::Drawable
 {
 private:

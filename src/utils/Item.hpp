@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 
+#include <iostream>
 class Item : public sf::Drawable
 {
 private:
@@ -22,6 +23,14 @@ public:
 	std::string const & getTexturePath() const {return _texturePath;}
 	sf::Font const & getFont() const {return _font;}
 	void setPosition(sf::Vector2f const & pos){_sprite.setPosition(pos);}
+
+	static std::string getTextureOf(std::string str) 
+	{
+		std::cout << str << std::endl;
+		if (str == "Armure") return "items2.png";
+		else if (str == "Plaque de fer") return "item3.png";
+		else if (str == "Plaque de fer neuve") return "item4.png";
+	}
 };
 
 #endif

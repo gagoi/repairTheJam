@@ -1,7 +1,10 @@
 #include "MainGame.hpp"
 
+MainGame * MainGame::instance = nullptr;
+
 MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
 {
+    _p = new Player();
     _blocks.push_back(new Block(0, 0));
     _blocks.push_back(new Block(1, 0));
     _blocks.push_back(new Block(2, 0));
@@ -40,9 +43,9 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     _blocks.push_back(new Block(10, 1));
     _blocks.push_back(new Block(10, 2, INPUT));
     _blocks.push_back(new Block(10, 3));
-    _blocks.push_back(new Block(10, 4));
-    _blocks.push_back(new Block(10, 5));
-    _blocks.push_back(new Block(10, 6));
+    _blocks.push_back(new Block(10, 4, DECOMPOSER_OUTPUT));
+    _blocks.push_back(new Block(10, 5, DECOMPOSER));
+    _blocks.push_back(new Block(10, 6, DECOMPOSER_OUTPUT));
     _blocks.push_back(new Block(10, 7));
     _blocks.push_back(new Block(10, 8));
     _blocks.push_back(new Block(10, 9));
@@ -72,14 +75,28 @@ void MainGame::draw(sf::RenderTarget & target, sf::RenderStates) const
         target.draw(*b);
     }
     
-    target.draw(_p);
+    target.draw(*_p);
 }
 
 void MainGame::update()
 {
-    _p.update(_blocks);
+    _p->update(_blocks);
     for (auto &&b : _blocks)
     {
         b->update();
     }
+}
+
+
+std::vector<Block*> MainGame::getDecomposerOut()
+{
+    std::vector<Block *> blocks;
+
+    for (auto &&b : _blocks)
+    {
+        if (b->getType() == DECOMPOSER_OUTPUT && b->getItem() == nullptr)
+            blocks.push_back(b);
+    }
+    
+    return blocks;
 }

@@ -19,6 +19,12 @@ Block::Block(int x, int y, Type t) : Block(x, y)
     _type = t;
     switch (t)
     {
+        case DECOMPOSER_OUTPUT:
+            _fg.loadFromFile("./res/textures/world/decomposer_out.png");
+            break;
+        case DECOMPOSER :
+            _fg.loadFromFile("./res/textures/world/decomposer.png");
+            break;
         case SCREWDRIVER :
             _fg.loadFromFile("./res/textures/world/screwdriver.png");
             break;
@@ -26,6 +32,8 @@ Block::Block(int x, int y, Type t) : Block(x, y)
             _bg.loadFromFile("./res/textures/world/input.png");
             _fg.loadFromFile("./res/textures/world/input.png");
             break;
+        default:
+        break;
     }
     _fg_sprite.setTexture(&_fg);
     _fg_sprite.setPosition(400 + x * 50, y * 50);
@@ -70,14 +78,38 @@ void Block::update()
         default:
             if (_item != nullptr && RecipesList::getInstance()->exist(_item->getName(), _type))
             {
-                BrokenItem * bitem = dynamic_cast<BrokenItem *>(_item);
-                if (bitem != nullptr)
+                if (_item != nullptr)
                 {
                     if (_processTime < 1)
                     {
                         _processTime += 0.01;
                         _bar.update();
+                    } else
+                    {
+                        if (getType() == DECOMPOSER)
+                        {
+                            std::vector<Block *> outputs = MainGame::getInstance()->getDecomposerOut();
+                            std::vector<std::string> outs = RecipesList::getInstance()->getRecipeOutput(_item->getName(), getType());
+                            if (outputs.size() >= outs.size())
+                            {
+                                int i = 0;
+                                for (auto &&str : outs)
+                                {
+                                    outputs[i]->setItem(new Item(str, Item::getTextureOf(str)));
+                                    ++i;
+                                }
+                                _item = nullptr;
+                            }
+                        } else
+                        {
+                            std::vector<std::string> outs = RecipesList::getInstance()->getRecipeOutput(_item->getName(), getType());
+                            delete _item;
+                            _item = new Item(outs[0], Item::getTextureOf(outs[0]));
+                            _item->setPosition(_fg_sprite.getPosition());
+                        }
+                        
                     }
+                    
                 }
                 else 
                 {
