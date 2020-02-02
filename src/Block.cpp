@@ -11,6 +11,7 @@ Block::Block(int x, int y) : _bg_sprite(sf::Vector2f(50, 50)), _bar(sf::Vector2f
     _bg_sprite.setTexture(&_bg);
     _bg_sprite.setPosition(400 + x * 50, y * 50);
     _processTime = 0;
+    _spawnable = false;
 }
 
 Block::Block(int x, int y, Type t) : Block(x, y)
@@ -19,6 +20,9 @@ Block::Block(int x, int y, Type t) : Block(x, y)
     _type = t;
     switch (t)
     {
+        case OUTPUT:
+            _fg.loadFromFile("./res/textures/world/output.png");
+            break;
         case ASSEMBLER:
             _fg.loadFromFile("./res/textures/world/assembler.png");
             break;
@@ -37,6 +41,7 @@ Block::Block(int x, int y, Type t) : Block(x, y)
         case INPUT : 
             _bg.loadFromFile("./res/textures/world/input.png");
             _fg.loadFromFile("./res/textures/world/input.png");
+            _spawnable = true;
             break;
         default:
         break;
@@ -70,13 +75,22 @@ void Block::update()
     float r;
     switch (_type)
     {
+        case OUTPUT:
+            if (_item != nullptr)
+            {
+                Orders::removeOrder(_item->getName());
+                delete _item;
+                _item = nullptr;
+            }
+        break;
         case INPUT:
             r = rand(gen);
-            if (_item == nullptr && r < 0.005)
+            if (_item == nullptr && _spawnable && r < 0.005)
             {
                 _item = new BrokenItem("Armure", "item2.png");
                 _item->setPosition(_fg_sprite.getPosition());
-                Orders::insertOrder(dynamic_cast<BrokenItem *>(_item));
+                _spawnable = false;
+                Orders::insertOrder(dynamic_cast<BrokenItem *>(_item), new Item("Armure neuve", Item::getTextureOf("Armure neuve")));
             }
         break;
         case ASSEMBLER:

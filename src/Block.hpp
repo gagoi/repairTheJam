@@ -20,6 +20,7 @@ private:
 	Type _type;
 	Item * _item;
 	float _processTime;
+	bool _spawnable;
 	ProgressBar _bar;
 public:
 	Block(int, int);

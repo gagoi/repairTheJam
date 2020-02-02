@@ -11,6 +11,7 @@ OrderItem::OrderItem(Item * item, int row) : _bg(sf::Vector2f(WIDTH, 40)), _icon
     _texture.loadFromFile(item->getTexturePath());
     _icon.setTexture(&_texture);
     _icon.setPosition(30, row * HEIGHT + 5);
+    _item = item->getName();
 }
 
 OrderItem::~OrderItem()
