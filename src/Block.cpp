@@ -19,6 +19,12 @@ Block::Block(int x, int y, Type t) : Block(x, y)
     _type = t;
     switch (t)
     {
+        case ASSEMBLER:
+            _fg.loadFromFile("./res/textures/world/assembler.png");
+            break;
+        case ASSEMBLER_INPUT :
+            _fg.loadFromFile("./res/textures/world/assembler_in.png");
+            break;
         case DECOMPOSER_OUTPUT:
             _fg.loadFromFile("./res/textures/world/decomposer_out.png");
             break;
@@ -73,6 +79,52 @@ void Block::update()
                 Orders::insertOrder(dynamic_cast<BrokenItem *>(_item));
             }
         break;
+        case ASSEMBLER:
+            if(_item == nullptr)
+            {
+                std::vector<Block *> outputs = MainGame::getInstance()->getAssemblerIn();
+                if (outputs.size() > 0)
+                {
+                    RecipeInventory in(outputs[0]->getItem()->getName());
+                    int i;
+                    for (i = 1; i < outputs.size(); ++i)
+                        in.push_back(outputs[i]->getItem()->getName());
+                    
+                    RecipeInventory const * out = RecipesList::getInstance()->getRecipeOutput(in, ASSEMBLER);
+                    if (out != nullptr)
+                    {
+                        if (_processTime < 1)
+                        {
+                            _processTime += 0.01;
+                            _bar.update();
+                        } else
+                        {
+                            _item = new Item(out->at(0), Item::getTextureOf(out->at(0)));
+                            _item->setPosition(_bg_sprite.getPosition());
+                            for (auto&& b : outputs)
+                            {
+                                delete b->getItem();
+                                b->removeItem();
+                            }
+                        }
+                        
+                    } else
+                    {
+                        _processTime = 0;
+                    }
+                    
+                } else
+                {
+                    _processTime = 0;
+                }
+                
+            } else
+            {
+                _processTime = 0;
+            }
+            
+        break;
+        case ASSEMBLER_INPUT:
         case NORMAL:
         break;
         default:
@@ -89,11 +141,11 @@ void Block::update()
                         if (getType() == DECOMPOSER)
                         {
                             std::vector<Block *> outputs = MainGame::getInstance()->getDecomposerOut();
-                            std::vector<std::string> outs = RecipesList::getInstance()->getRecipeOutput(_item->getName(), getType());
-                            if (outputs.size() >= outs.size())
+                            RecipeInventory const * outs = RecipesList::getInstance()->getRecipeOutput(RecipeInventory(_item->getName()), getType());
+                            if (outputs.size() >= outs->size())
                             {
                                 int i = 0;
-                                for (auto &&str : outs)
+                                for (auto &&str : *outs)
                                 {
                                     outputs[i]->setItem(new Item(str, Item::getTextureOf(str)));
                                     ++i;
@@ -102,9 +154,9 @@ void Block::update()
                             }
                         } else
                         {
-                            std::vector<std::string> outs = RecipesList::getInstance()->getRecipeOutput(_item->getName(), getType());
+                            RecipeInventory const * outs = RecipesList::getInstance()->getRecipeOutput(RecipeInventory(_item->getName()), getType());
                             delete _item;
-                            _item = new Item(outs[0], Item::getTextureOf(outs[0]));
+                            _item = new Item((*outs)[0], Item::getTextureOf((*outs)[0]));
                             _item->setPosition(_fg_sprite.getPosition());
                         }
                         

@@ -22,7 +22,7 @@ public:
 	std::string getName() const {return _name;}
 	std::string const & getTexturePath() const {return _texturePath;}
 	sf::Font const & getFont() const {return _font;}
-	void setPosition(sf::Vector2f const & pos){_sprite.setPosition(pos);}
+	void setPosition(sf::Vector2f const & pos){_sprite.setPosition(pos);_sprite.move(5, 5);}
 
 	static std::string getTextureOf(std::string str) 
 	{
@@ -30,6 +30,7 @@ public:
 		if (str == "Armure") return "items2.png";
 		else if (str == "Plaque de fer") return "item3.png";
 		else if (str == "Plaque de fer neuve") return "item4.png";
+		else if (str == "Armure réparée") return "item5.png";
 	}
 };
 

@@ -20,6 +20,6 @@ Item::~Item()
 
 void Item::draw(sf::RenderTarget & target, sf::RenderStates states) const
 {
-    target.draw(_text);
+    //target.draw(_text);
     target.draw(_sprite);
 }

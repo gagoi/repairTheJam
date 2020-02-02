@@ -9,6 +9,7 @@
 #include "RecipesList.hpp"
 #include "MainGame.hpp"
 #include "EnumMachine.hpp"
+#include "RecipeInventory.hpp"
 class Block : public sf::Drawable
 {
 private:

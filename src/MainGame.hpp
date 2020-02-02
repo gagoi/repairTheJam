@@ -22,6 +22,7 @@ public:
 	void draw(sf::RenderTarget &, sf::RenderStates) const;
 	void update();
 	std::vector<Block*> getDecomposerOut();
+	std::vector<Block*> getAssemblerIn();
 	static MainGame * getInstance() {if (instance == nullptr) instance = new MainGame(); return instance;}
 	static void free() {delete instance;}
 };

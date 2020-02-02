@@ -27,10 +27,10 @@ MainGame::MainGame() : _bg(sf::Vector2f(1500, 1000))
     _blocks.push_back(new Block(0, 9));
 
     _blocks.push_back(new Block(0, 10));
-    _blocks.push_back(new Block(1, 10));
-    _blocks.push_back(new Block(2, 10));
-    _blocks.push_back(new Block(3, 10));
-    _blocks.push_back(new Block(4, 10));
+    _blocks.push_back(new Block(1, 10, ASSEMBLER));
+    _blocks.push_back(new Block(2, 10, ASSEMBLER_INPUT));
+    _blocks.push_back(new Block(3, 10, ASSEMBLER_INPUT));
+    _blocks.push_back(new Block(4, 10, ASSEMBLER_INPUT));
     _blocks.push_back(new Block(5, 10));
     _blocks.push_back(new Block(6, 10));
     _blocks.push_back(new Block(7, 10));
@@ -95,6 +95,20 @@ std::vector<Block*> MainGame::getDecomposerOut()
     for (auto &&b : _blocks)
     {
         if (b->getType() == DECOMPOSER_OUTPUT && b->getItem() == nullptr)
+            blocks.push_back(b);
+    }
+    
+    return blocks;
+}
+
+
+std::vector<Block*> MainGame::getAssemblerIn()
+{
+    std::vector<Block *> blocks;
+
+    for (auto &&b : _blocks)
+    {
+        if (b->getType() == ASSEMBLER_INPUT && b->getItem() != nullptr)
             blocks.push_back(b);
     }
     
